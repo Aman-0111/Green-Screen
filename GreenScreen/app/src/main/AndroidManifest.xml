@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenScreen">
-        <activity android:name=".PlanYourTravel"></activity>
-        <activity android:name=".MainActivityTravel"/>
+        <activity android:name=".Scan"></activity>
+        <activity android:name=".AfterLoginJava" />
+        <activity android:name=".CaptureActivity" />
+        <activity android:name=".PlanYourTravel" />
+        <activity android:name=".MainActivityTravel" />
         <activity android:name=".yourGreenscore.yourGreenscore" />
         <activity android:name=".AfterLogin" />
         <activity

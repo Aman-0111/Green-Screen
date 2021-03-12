@@ -10,7 +10,7 @@ import android.widget.Toast.*
 import com.example.greenscreen.yourGreenscore.yourGreenscore
 import com.google.zxing.integration.android.IntentIntegrator
 
-class AfterLogin : AppCompatActivity() {
+class AfterLogin : AppCompatActivity()  {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,14 +25,16 @@ class AfterLogin : AppCompatActivity() {
         val btn_scan = findViewById<Button>(R.id.btn_scan)
         //scan button
         btn_scan.setOnClickListener {
-            val scanner = IntentIntegrator(this)
-            scanner.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+
+            val intent = Intent(this@AfterLogin, AfterLoginJava::class.java)
+            startActivity(intent)
+           /* val scanner = IntentIntegrator(this)
+            scanner.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
             scanner.setBeepEnabled(false)
-            scanner.initiateScan()
+            scanner.initiateScan()*/
         }
 
         val plan_your_travel = findViewById<Button>(R.id.plan_your_travel)
-        //scan button
         plan_your_travel.setOnClickListener {
             val intent = Intent(this@AfterLogin,MainActivityTravel::class.java)
             startActivity(intent)

@@ -55,11 +55,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0-alpha01'
     implementation 'com.github.paroca72:sc-gauges:3.0.0'
     implementation 'com.github.Gruzer:simple-gauge-android:0.3.1'
-    implementation 'org.hibernate:hibernate-validator:4.2.0.Final'
+    implementation 'org.hibernate:hibernate-validator:5.2.0.Final'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:26.0.2'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'com.google.android.libraries.places:places:2.4.0'
+    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
 
 
 }
