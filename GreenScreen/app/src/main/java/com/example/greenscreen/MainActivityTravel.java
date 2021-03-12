@@ -81,50 +81,55 @@ public class MainActivityTravel extends AppCompatActivity {
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
          super.onActivityResult(requestCode,resultCode,data);
          //Check condition
-            if(requestCode == 100 && resultCode == RESULT_OK){
-                //When succes
-                //Initialize place
-                Place place = Autocomplete.getPlaceFromIntent(data);
-                //Check condition
-                if(sType.equals("source")) {
-                    //When type is source
-                    //Increase flag value
-                    flag++;
-                    //Set adress on edit text
-                    etSource.setText(place.getAddress());
-                    //Get latitude and longitude
-                    String sSource = String.valueOf(place.getLatLng());
-                    sSource = sSource.replaceAll("lat/lng:", "");
-                    sSource = sSource.replace("(", "");
-                    sSource = sSource.replace(")", "");
-                    String[] split = sSource.split(",");
-                    lat1 = Double.parseDouble(split[0]);
-                    long1 = Double.parseDouble(split[1]);
-                }else {
-                    //When type is destination
-                    //Increase flag value
-                    flag++;
-                    //Set adress on edit text
-                    etDestination.setText(place.getAddress());
-                    //Get latitude and longitude
-                    String sDestination = String.valueOf(place.getLatLng());
-                    sDestination = sDestination.replaceAll("lat/lng;","");
-                    sDestination = sDestination.replace("(","");
-                    sDestination = sDestination.replace(")","");
-                    String[] split = sDestination.split(",");
-                    lat2 = Double.parseDouble(split[0]);
-                    long2 = Double.parseDouble(split[1]);
-                }
-                if(flag>=2){
-                    //When flag is greater than and equal to 2
-                    //Calculate distance
-                    distance(lat1,long1,lat2,long2);
-                }
-                else if (requestCode == AutocompleteActivity.RESULT_ERROR) {
-                    Status status = Autocomplete.getStatusFromIntent(data);
-                    Toast.makeText(getApplicationContext(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
+         //try {
+             if (resultCode == RESULT_OK && requestCode == 100) {
+                 //When succes
+                 //Initialize place
+                 Place place = Autocomplete.getPlaceFromIntent(data);
+                 //Check condition
+                 if (sType.equals("source")) {
+                     //When type is source
+                     //Increase flag value
+                     flag++;
+                     //Set adress on edit text
+                     etSource.setText(place.getAddress());
+                     //Get latitude and longitude
+                     String sSource = String.valueOf(place.getLatLng());
+                     sSource = sSource.replaceAll("lat/lng:", "");
+                     sSource = sSource.replace("(", "");
+                     sSource = sSource.replace(")", "");
+                     String[] split = sSource.split(",");
+                     lat1 = Double.parseDouble(split[0]);
+                     long1 = Double.parseDouble(split[1]);
+                 } else {
+                     //When type is destination
+                     //Increase flag value
+                     flag++;
+                     //Set adress on edit text
+                     etDestination.setText(place.getAddress());
+                     //Get latitude and longitude
+                     String sDestination = String.valueOf(place.getLatLng());
+                     sDestination = sDestination.replaceAll("lat/lng: ", "");
+                     sDestination = sDestination.replace("(", "");
+                     sDestination = sDestination.replace(")", "");
+                     String[] split = sDestination.split(",");
+                     lat2 = Double.parseDouble(split[0]);
+                     long2 = Double.parseDouble(split[1]);
+                 }
+                 if (flag >= 2) {
+                     //When flag is greater than and equal to 2
+                     //Calculate distance
+                     distance(lat1, long1, lat2, long2);
+                 }
+
+             } else if (requestCode == AutocompleteActivity.RESULT_ERROR) {
+                 Status status = Autocomplete.getStatusFromIntent(data);
+                 Toast.makeText(getApplicationContext(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+             }/*
+         }catch(NumberFormatException X)
+         {
+             System.out.println("something");
+         }*/
         }
 
 
@@ -132,16 +137,16 @@ public class MainActivityTravel extends AppCompatActivity {
         //Calculate longitude difference
         double longDiff = long1 - long2;
         //Calculate distance
-        double distance = Math.sin(deg2rad(lat1));
-        Math.sin(deg2rad(lat2));
-        Math.cos(deg2rad(lat1));
-        Math.cos(deg2rad(lat2));
-        Math.cos(deg2rad(longDiff));
+        double distance = Math.sin(deg2rad(lat1))
+                * Math.sin(deg2rad(lat2))
+                + Math.cos(deg2rad(lat1))
+                * Math.cos(deg2rad(lat2))
+                * Math.cos(deg2rad(longDiff));
          distance= Math.acos(distance);
          distance = rad2deg(distance);
          distance = distance * 60 * 1.1515;
          distance = distance * 1.609344;
-         textView.setText(String.format(Locale.US,"%2f KIlometer",distance));
+         textView.setText(String.format(Locale.US,"%2f Kilometer",distance));
     }
 
     private double rad2deg(double distance){

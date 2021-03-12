@@ -78,7 +78,7 @@ class PlanYourTravel : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int,resultCode: Int,data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //Check condition
-        if (requestCode == 100 && resultCode == RESULT_OK ) {
+        if (requestCode == 100 ) {
             val intent = data
             //When succes
             //Initialize place
