@@ -3,7 +3,6 @@ package com.example.greenscreen.yourGreenscore
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.greenscreen.R
-import com.example.greenscreen.yourGreenscore.MainFragment.*
 
 class yourGreenscore : AppCompatActivity() {
 
