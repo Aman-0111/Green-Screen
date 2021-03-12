@@ -34,7 +34,7 @@ class AfterLogin : AppCompatActivity() {
         val plan_your_travel = findViewById<Button>(R.id.plan_your_travel)
         //scan button
         plan_your_travel.setOnClickListener {
-            val intent = Intent(this@AfterLogin,PlanYourTravel::class.java)
+            val intent = Intent(this@AfterLogin,MainActivityTravel::class.java)
             startActivity(intent)
         }
     }
