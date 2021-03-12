@@ -106,7 +106,7 @@ class PlanYourTravel : AppCompatActivity() {
                 etDestination!!.setText(place.address)
                 //Get latitude and longitude
                 var sDestination = place.latLng.toString()
-                sDestination = sDestination.replace("lat/lng;".toRegex(), "")
+                sDestination = sDestination.replace("lat/lng:".toRegex(), "")
                 sDestination = sDestination.replace("(", "")
                 sDestination = sDestination.replace(")", "")
                 val split = sDestination.split(",".toRegex()).toTypedArray()
@@ -139,7 +139,7 @@ class PlanYourTravel : AppCompatActivity() {
         distance = rad2deg(distance)
         distance = distance * 60 * 1.1515
         distance = distance * 1.609344
-        textView!!.text = String.format(Locale.US, "%2f KIlometer", distance)
+        textView!!.text = String.format(Locale.US, "%2f Kilometer", distance)
     }
 
     private fun rad2deg(distance: Double): Double {
