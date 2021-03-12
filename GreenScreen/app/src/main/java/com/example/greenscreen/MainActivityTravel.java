@@ -81,7 +81,7 @@ public class MainActivityTravel extends AppCompatActivity {
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
          super.onActivityResult(requestCode,resultCode,data);
          //Check condition
-         //try {
+         try {
              if (resultCode == RESULT_OK && requestCode == 100) {
                  //When succes
                  //Initialize place
@@ -125,11 +125,11 @@ public class MainActivityTravel extends AppCompatActivity {
              } else if (requestCode == AutocompleteActivity.RESULT_ERROR) {
                  Status status = Autocomplete.getStatusFromIntent(data);
                  Toast.makeText(getApplicationContext(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
-             }/*
+             }
          }catch(NumberFormatException X)
          {
              System.out.println("something");
-         }*/
+         }
         }
 
 
