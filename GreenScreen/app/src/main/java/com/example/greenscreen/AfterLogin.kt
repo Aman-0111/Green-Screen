@@ -26,7 +26,7 @@ class AfterLogin : AppCompatActivity()  {
         //scan button
         btn_scan.setOnClickListener {
 
-            val intent = Intent(this@AfterLogin, AfterLoginJava::class.java)
+            val intent = Intent(this@AfterLogin, ScanBarcode::class.java)
             startActivity(intent)
            /* val scanner = IntentIntegrator(this)
             scanner.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)

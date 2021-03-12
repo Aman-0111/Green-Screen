@@ -19,23 +19,24 @@ import kotlin.Metadata;
 import org.jetbrains.annotations.Nullable;
 
 
-public class AfterLoginJava extends AppCompatActivity implements View.OnClickListener{
+public class ScanBarcode extends AppCompatActivity implements View.OnClickListener {
 
     Button scanBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
         scanBtn = findViewById(R.id.btn_scan);
         scanBtn.setOnClickListener(this);
     }
+
     public void onClick(View v) {
         scanCode();
     }
 
-    private void scanCode(){
+    private void scanCode() {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CaptureActivity.class);
         integrator.setOrientationLocked(false);
@@ -44,12 +45,15 @@ public class AfterLoginJava extends AppCompatActivity implements View.OnClickLis
         integrator.initiateScan();
 
     }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if(result!=null) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
             if (result.getContents() != null) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                startActivity(new Intent(ScanBarcode.this,Pop.class));
+                'https://api.edamam.com/api/food-database/v2/parser?upc={result.getContents()}&app_id={a6a1b279}&app_key={811e9570fba943e0f81a25e0daf2c60b}'
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
                 builder.setTitle("scanning Result");
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
@@ -66,11 +70,11 @@ public class AfterLoginJava extends AppCompatActivity implements View.OnClickLis
                 AlertDialog dialog = builder.create();
                 dialog.show();
             } else {
-                Toast.makeText(this, "No Results", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No Results", Toast.LENGTH_LONG).show();*/
             }
-        }else {
-                super.onActivityResult(requestCode,resultCode,data);
-        }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data);
+            }
         }
 
-}
+    }
