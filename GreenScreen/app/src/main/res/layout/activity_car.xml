@@ -7,20 +7,36 @@
     android:background="@drawable/gradient_background"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".vehicles.Bus">
+    tools:context=".vehicles.Car">
 
     <TextView
         android:id="@+id/text_view"
-        android:layout_width="384dp"
+        android:layout_width="171dp"
         android:layout_height="52dp"
         android:layout_below="@+id/et_destination"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="227dp"
+        android:layout_marginBottom="663dp"
         android:textColor="@color/login_form_details"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="11dp"
         tools:layout_editor_absoluteY="275dp" />
+
+    <EditText
+        android:id="@+id/CO2"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="661dp"
+        android:inputType="text"
+        tools:hint="CO2 Emissions of car" />
 
 </RelativeLayout>
