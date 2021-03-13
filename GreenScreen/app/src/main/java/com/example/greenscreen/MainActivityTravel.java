@@ -43,6 +43,7 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
     String sType;
     double lat1 = 0,long1 =0,lat2=0,long2=0;
     int flag = 0;
+    double distance = 0.0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -183,6 +184,7 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
          distance = rad2deg(distance);
          distance = distance * 60 * 1.1515;
          distance = distance * 1.609344;
+         this.distance = distance;
          textView.setText(String.format(Locale.US,"%2f Kilometer",distance));
 
 
@@ -281,6 +283,10 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.plane:
                 Intent intent5 = new Intent(this, Plane.class);
+                Bundle b = new Bundle();
+                b.putDouble("key", this.distance);
+                intent5.putExtras(b);
+                startActivity(intent5);
                 startActivity(intent5);
                 break;
             case R.id.bus:
