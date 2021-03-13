@@ -9,18 +9,71 @@
     android:orientation="vertical"
     tools:context=".vehicles.Walk">
 
+
+
+    <TextView
+        android:id="@+id/Walk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_destination"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="634dp"
+        android:text="Walk"
+        android:textColor="@color/login_form_details"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+
     <TextView
         android:id="@+id/text_view"
         android:layout_width="384dp"
         android:layout_height="52dp"
         android:layout_below="@+id/et_destination"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="440dp"
         android:textColor="@color/login_form_details"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="11dp"
         tools:layout_editor_absoluteY="275dp" />
+
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="384dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/et_destination"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="515dp"
+        android:textColor="@color/login_form_details"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <com.ekn.gruzer.gaugelibrary.HalfGauge
+        android:id="@+id/halfGauge"
+        android:layout_width="347dp"
+        android:layout_height="246dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="342dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </RelativeLayout>
