@@ -198,25 +198,37 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 walk.setEnabled(true);
                 cycle.setEnabled(true);
                 plane.setEnabled(false);
+                if(distance> 1)
+                {
+                    bus.setEnabled(true);
+                    car.setEnabled(true);
+                }
             }
             else if (distance > 0 && distance < 25) { //0-25
                 walk.setEnabled(false);
                 cycle.setEnabled(true);
+                if(distance> 15)
+                {
+                    bus.setEnabled(true);
+                    car.setEnabled(true);
+                    train.setEnabled(true);
+                }
             }
-            else if (distance > 25 && distance < 30) { //0-30
+            else if (distance > 25 && distance < 400) {
+                walk.setEnabled(false);
                 cycle.setEnabled(false);
                 bus.setEnabled(true);
+                car.setEnabled(true);
+                train.setEnabled(true);
             }
-            else if (distance > 1 && distance < 100) { //10-50
-                cycle.setEnabled(false);
-                bus.setEnabled(true);
-            }
-            else if (distance > 20 && distance < 600) { //0-150
+            else if (distance > 50 && distance < 600) { //0-150
                 walk.setEnabled(false);
                 cycle.setEnabled(false);
                 bus.setEnabled(false);
-                plane.setEnabled(false);
                 train.setEnabled(true);
+                car.setEnabled(true);
+                if(distance>150)
+                    plane.setEnabled(false);
             }
             else if (distance > 150) { //150+
                 walk.setEnabled(false);
@@ -225,8 +237,9 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 train.setEnabled(false);
                 plane.setEnabled(true);
             }
-            car.setEnabled(true);
+
         }
+
 
     }
 
