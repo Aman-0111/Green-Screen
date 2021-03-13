@@ -220,6 +220,10 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 bus.setEnabled(true);
                 car.setEnabled(true);
                 train.setEnabled(true);
+                plane.setEnabled(false);
+                if(distance>150)
+                    plane.setEnabled(true);
+
             }
             else if (distance > 50 && distance < 600) { //0-150
                 walk.setEnabled(false);

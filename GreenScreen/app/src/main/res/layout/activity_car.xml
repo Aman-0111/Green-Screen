@@ -11,14 +11,13 @@
 
     <TextView
         android:id="@+id/text_view"
-        android:layout_width="171dp"
-        android:layout_height="52dp"
-        android:layout_below="@+id/et_destination"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginEnd="227dp"
-        android:layout_marginBottom="663dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginBottom="647dp"
         android:textColor="@color/login_form_details"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -27,16 +26,20 @@
 
     <EditText
         android:id="@+id/CO2"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="44dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="661dp"
-        tools:hint="CO2 Emissions of car"
-        android:inputType="numberDecimal"/>
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="644dp"
+        android:gravity="center_horizontal"
+        android:inputType="numberDecimal"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:hint="Number"
+        android:autofillHints="" />
 
 </RelativeLayout>
