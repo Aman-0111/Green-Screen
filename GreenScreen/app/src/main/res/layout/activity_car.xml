@@ -36,7 +36,7 @@
         android:layout_marginTop="11dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="661dp"
-        android:inputType="text"
-        tools:hint="CO2 Emissions of car" />
+        tools:hint="CO2 Emissions of car"
+        android:inputType="numberDecimal"/>
 
 </RelativeLayout>
