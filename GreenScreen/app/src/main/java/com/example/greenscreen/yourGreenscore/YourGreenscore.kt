@@ -16,17 +16,17 @@ class yourGreenscore : AppCompatActivity() {
         val range = Range()
         range.color = Color.parseColor("#ce0000")
         range.from =0.0
-        range.to = 50.0
+        range.to = 33.0
 
         val range2 = Range()
         range2.color = Color.parseColor("#E3E500")
-        range2.from = 50.0
-        range2.to = 100.0
+        range2.from = 33.0
+        range2.to = 66.0
 
         val range3 = Range()
         range3.color = Color.parseColor("#00b20b")
-        range3.from = 100.0
-        range3.to = 150.0
+        range3.from = 66.0
+        range3.to = 100.0
 
         //add color ranges to gauge
         //add color ranges to gauge
@@ -37,8 +37,8 @@ class yourGreenscore : AppCompatActivity() {
         //set min max and current value
         //set min max and current value
         halfGauge.minValue = 0.0
-        halfGauge.maxValue = (150).toDouble()
-        halfGauge.value = (80).toDouble()
+        halfGauge.maxValue = (100).toDouble()
+        halfGauge.value = (50).toDouble()
 
         halfGauge.setNeedleColor(Color.DKGRAY)
         halfGauge.valueColor = Color.BLUE

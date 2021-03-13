@@ -16,7 +16,7 @@ public class Train extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plane);
+        setContentView(R.layout.activity_train);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
         TextView TIME = (TextView) findViewById(R.id.text_view2);
         Bundle train = getIntent().getExtras();

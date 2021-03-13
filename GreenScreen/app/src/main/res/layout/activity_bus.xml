@@ -34,8 +34,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="220dp"
         android:textColor="@color/login_form_details"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -51,25 +51,12 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="515dp"
+        android:layout_marginBottom="429dp"
         android:textColor="@color/login_form_details"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="11dp"
         tools:layout_editor_absoluteY="275dp" />
 
-    <com.ekn.gruzer.gaugelibrary.HalfGauge
-        android:id="@+id/halfGauge"
-        android:layout_width="347dp"
-        android:layout_height="246dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="342dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>
