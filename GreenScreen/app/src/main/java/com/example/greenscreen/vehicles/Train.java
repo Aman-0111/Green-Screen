@@ -13,5 +13,8 @@ public class Train extends AppCompatActivity {
         setContentView(R.layout.activity_train);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
         CO2.setText("CO2 emissions: ");
+        Bundle train = getIntent().getExtras();
+        double result = train.getDouble("key");
+        CO2.setText("CO2 emissions: "+result);
     }
 }

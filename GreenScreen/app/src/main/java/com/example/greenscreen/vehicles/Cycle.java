@@ -13,5 +13,8 @@ public class Cycle extends AppCompatActivity {
         setContentView(R.layout.activity_cycle);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
         CO2.setText("CO2 emissions: ");
+        Bundle cycle = getIntent().getExtras();
+        double result = cycle.getDouble("key");
+        CO2.setText("CO2 emissions: "+result);
 }
 }

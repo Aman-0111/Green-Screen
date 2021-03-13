@@ -267,29 +267,48 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
             case R.id.train:
                 Intent intent1 = new Intent(this, Train.class);
                 startActivity(intent1);
+                Bundle train = new Bundle();
+                train.putDouble("key", this.distance);
+                intent1.putExtras(train);
+                startActivity(intent1);
                 break;
             case R.id.car:
                 Intent intent2 = new Intent(this, Car.class);
+                startActivity(intent2);
+                Bundle car = new Bundle();
+                car.putDouble("key", this.distance);
+                intent2.putExtras(car);
                 startActivity(intent2);
                 break;
             case R.id.cycle:
                 Intent intent3 = new Intent(this, Cycle.class);
                 startActivity(intent3);
+                Bundle cycle = new Bundle();
+                cycle.putDouble("key", this.distance);
+                intent3.putExtras(cycle);
+                startActivity(intent3);
                 break;
             case R.id.walk:
                 Intent intent4 = new Intent(this, Walk.class);
                 startActivity(intent4);
+                Bundle walk = new Bundle();
+                walk.putDouble("key", this.distance);
+                intent4.putExtras(walk);
+                startActivity(intent4);
                 break;
             case R.id.plane:
                 Intent intent5 = new Intent(this, Plane.class);
-                Bundle b = new Bundle();
-                b.putDouble("key", this.distance);
-                intent5.putExtras(b);
-                startActivity(intent5);
+                Bundle plane = new Bundle();
+                plane.putDouble("key", this.distance);
+                intent5.putExtras(plane);
                 startActivity(intent5);
                 break;
             case R.id.bus:
                 Intent intent6 = new Intent(this, Bus.class);
+                startActivity(intent6);
+                Bundle bus = new Bundle();
+                bus.putDouble("key", this.distance);
+                intent6.putExtras(bus);
                 startActivity(intent6);
                 break;
             default:

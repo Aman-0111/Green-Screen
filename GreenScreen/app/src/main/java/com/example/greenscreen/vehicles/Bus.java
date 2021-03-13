@@ -13,5 +13,8 @@ public class Bus extends AppCompatActivity {
         setContentView(R.layout.activity_bus);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
         CO2.setText("CO2 emissions: ");
+        Bundle bus = getIntent().getExtras();
+        double result = bus.getDouble("key");
+        CO2.setText("CO2 emissions: "+result);
     }
 }

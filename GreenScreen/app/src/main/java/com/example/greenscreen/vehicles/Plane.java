@@ -13,8 +13,8 @@ public class Plane extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plane);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
-        Bundle b = getIntent().getExtras();
-        double result = b.getDouble("key");
+        Bundle plane = getIntent().getExtras();
+        double result = plane.getDouble("key");
         CO2.setText("CO2 emissions: "+result);
     }
 }
