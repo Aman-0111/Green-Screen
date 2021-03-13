@@ -193,8 +193,40 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
         Button plane = (Button) findViewById(R.id.plane);
         Button bus = (Button) findViewById(R.id.bus);
 
-        if(distance!=0.0)
-            walk.setEnabled(distance<200);
+        if(distance != 0.0) {
+            if (distance > 0 && distance < 15) { //0-15
+                walk.setEnabled(true);
+                cycle.setEnabled(true);
+                plane.setEnabled(false);
+            }
+            else if (distance > 0 && distance < 25) { //0-25
+                walk.setEnabled(false);
+                cycle.setEnabled(true);
+            }
+            else if (distance > 25 && distance < 30) { //0-30
+                cycle.setEnabled(false);
+                bus.setEnabled(true);
+            }
+            else if (distance > 1 && distance < 100) { //10-50
+                cycle.setEnabled(false);
+                bus.setEnabled(true);
+            }
+            else if (distance > 20 && distance < 600) { //0-150
+                walk.setEnabled(false);
+                cycle.setEnabled(false);
+                bus.setEnabled(false);
+                plane.setEnabled(false);
+                train.setEnabled(true);
+            }
+            else if (distance > 150) { //150+
+                walk.setEnabled(false);
+                cycle.setEnabled(false);
+                bus.setEnabled(false);
+                train.setEnabled(false);
+                plane.setEnabled(true);
+            }
+            car.setEnabled(true);
+        }
 
     }
 
@@ -212,7 +244,6 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
-
 
         switch (view.getId()){
             case R.id.train:

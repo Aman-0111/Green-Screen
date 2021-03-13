@@ -18,6 +18,6 @@ class Car : AppCompatActivity() {
         setContentView(R.layout.activity_car)
         text_view.setText("CO2 emissions: ")
 
-       // val num1 = CO2.text.toString().toInt()
+        val num1 = CO2.text.toString().toInt()
     }
 }
