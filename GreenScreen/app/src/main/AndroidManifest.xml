@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenScreen">
-        <activity android:name=".vehicles.Bus"></activity>
         <activity android:name=".vehicles.Walk" />
+        <activity android:name=".vehicles.Car" />
         <activity android:name=".vehicles.Cycle" />
         <activity android:name=".vehicles.Plane" />
-        <activity android:name=".vehicles.Car" />
+        <activity android:name=".vehicles.Bus" />
         <activity android:name=".vehicles.Train" />
         <activity android:name=".Scan.ScanBarcode" />
         <activity android:name=".CaptureActivity" />

@@ -1,8 +1,10 @@
 package com.example.greenscreen;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,11 +43,13 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
     String sType;
     double lat1 = 0,long1 =0,lat2=0,long2=0;
     int flag = 0;
+    double distance = 0.0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_your_travel);
 
         //declared buttons
+
         Button train = (Button) findViewById(R.id.train);
         Button car = (Button) findViewById(R.id.car);
         Button walk = (Button) findViewById(R.id.walk);
@@ -103,8 +107,10 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 startActivityForResult(intent, 100);
             }
         });
-        //Set text on text view
         textView.setText("0.0 Kilometers");
+        //Set text on text view
+
+
     }
 
 
@@ -160,6 +166,7 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
          {
              System.out.println("something");
          }
+
         }
 
 
@@ -176,7 +183,69 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
          distance = rad2deg(distance);
          distance = distance * 60 * 1.1515;
          distance = distance * 1.609344;
+         this.distance = distance;
          textView.setText(String.format(Locale.US,"%2f Kilometer",distance));
+
+
+        Button train = (Button) findViewById(R.id.train);
+        Button car = (Button) findViewById(R.id.car);
+        Button walk = (Button) findViewById(R.id.walk);
+        Button cycle = (Button) findViewById(R.id.cycle);
+        Button plane = (Button) findViewById(R.id.plane);
+        Button bus = (Button) findViewById(R.id.bus);
+
+        if(distance != 0.0) {
+            if (distance > 0 && distance < 15) { //0-15
+                walk.setEnabled(true);
+                cycle.setEnabled(true);
+                plane.setEnabled(false);
+                if(distance> 1)
+                {
+                    bus.setEnabled(true);
+                    car.setEnabled(true);
+                }
+            }
+            else if (distance > 0 && distance < 25) { //0-25
+                walk.setEnabled(false);
+                cycle.setEnabled(true);
+                if(distance> 15)
+                {
+                    bus.setEnabled(true);
+                    car.setEnabled(true);
+                    train.setEnabled(true);
+                }
+            }
+            else if (distance > 25 && distance < 400) {
+                walk.setEnabled(false);
+                cycle.setEnabled(false);
+                bus.setEnabled(true);
+                car.setEnabled(true);
+                train.setEnabled(true);
+                plane.setEnabled(false);
+                if(distance>150)
+                    plane.setEnabled(true);
+
+            }
+            else if (distance > 50 && distance < 600) { //0-150
+                walk.setEnabled(false);
+                cycle.setEnabled(false);
+                bus.setEnabled(false);
+                train.setEnabled(true);
+                car.setEnabled(true);
+                if(distance>150)
+                    plane.setEnabled(false);
+            }
+            else if (distance > 150) { //150+
+                walk.setEnabled(false);
+                cycle.setEnabled(false);
+                bus.setEnabled(false);
+                train.setEnabled(false);
+                plane.setEnabled(true);
+            }
+
+        }
+
+
     }
 
     private double rad2deg(double distance){
@@ -187,10 +256,13 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
         return (lat1*Math.PI/180.0);
     }
 
+
+
     //onClick switch
 
     @Override
     public void onClick(View view) {
+
         switch (view.getId()){
             case R.id.train:
                 Intent intent1 = new Intent(this, Train.class);
@@ -210,6 +282,10 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.plane:
                 Intent intent5 = new Intent(this, Plane.class);
+                Bundle b = new Bundle();
+                b.putDouble("key", this.distance);
+                intent5.putExtras(b);
+                startActivity(intent5);
                 startActivity(intent5);
                 break;
             case R.id.bus:
