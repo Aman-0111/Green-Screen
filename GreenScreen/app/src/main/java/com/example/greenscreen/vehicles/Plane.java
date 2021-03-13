@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.greenscreen.R;
 
 public class Plane extends AppCompatActivity {
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plane);
@@ -16,5 +15,6 @@ public class Plane extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         double result = b.getDouble("key");
         CO2.setText("CO2 emissions: "+result);
+        CO2.setText("CO2 emissions: ");
     }
 }

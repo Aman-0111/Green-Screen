@@ -44,6 +44,7 @@ public class MainActivityTravel extends AppCompatActivity implements View.OnClic
     double lat1 = 0,long1 =0,lat2=0,long2=0;
     int flag = 0;
     double distance = 0.0;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_your_travel);
