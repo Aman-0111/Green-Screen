@@ -1,15 +1,24 @@
 package com.example.greenscreen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.greenscreen.vehicles.Bus;
+import com.example.greenscreen.vehicles.Car;
+import com.example.greenscreen.vehicles.Cycle;
+import com.example.greenscreen.vehicles.Plane;
+import com.example.greenscreen.vehicles.Train;
+import com.example.greenscreen.vehicles.Walk;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
@@ -21,7 +30,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivityTravel extends AppCompatActivity {
+public class MainActivityTravel extends AppCompatActivity implements View.OnClickListener {
+
+    //Todo: Enable Buttons when in KM range
+    //Todo: CO2 Emissions for every vehicle
+    //Todo: Embed Gauge in every vehicle class
 
     EditText etSource,etDestination;
     TextView textView;
@@ -31,6 +44,22 @@ public class MainActivityTravel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_your_travel);
+
+        //declared buttons
+        Button train = (Button) findViewById(R.id.train);
+        Button car = (Button) findViewById(R.id.car);
+        Button walk = (Button) findViewById(R.id.walk);
+        Button cycle = (Button) findViewById(R.id.cycle);
+        Button plane = (Button) findViewById(R.id.plane);
+        Button bus = (Button) findViewById(R.id.bus);
+        train.setOnClickListener(this);
+        car.setOnClickListener(this);
+        walk.setOnClickListener(this);
+        cycle.setOnClickListener(this);
+        plane.setOnClickListener(this);
+        bus.setOnClickListener(this);
+
+
 
         etSource = findViewById(R.id.et_source);
         etDestination = findViewById(R.id.et_destination);
@@ -77,6 +106,7 @@ public class MainActivityTravel extends AppCompatActivity {
         //Set text on text view
         textView.setText("0.0 Kilometers");
     }
+
 
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
          super.onActivityResult(requestCode,resultCode,data);
@@ -156,4 +186,40 @@ public class MainActivityTravel extends AppCompatActivity {
     private double deg2rad(double lat1) {
         return (lat1*Math.PI/180.0);
     }
+
+    //onClick switch
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.train:
+                Intent intent1 = new Intent(this, Train.class);
+                startActivity(intent1);
+                break;
+            case R.id.car:
+                Intent intent2 = new Intent(this, Car.class);
+                startActivity(intent2);
+                break;
+            case R.id.cycle:
+                Intent intent3 = new Intent(this, Cycle.class);
+                startActivity(intent3);
+                break;
+            case R.id.walk:
+                Intent intent4 = new Intent(this, Walk.class);
+                startActivity(intent4);
+                break;
+            case R.id.plane:
+                Intent intent5 = new Intent(this, Plane.class);
+                startActivity(intent5);
+                break;
+            case R.id.bus:
+                Intent intent6 = new Intent(this, Bus.class);
+                startActivity(intent6);
+                break;
+            default:
+                break;
+        }
 }
+}
+
+

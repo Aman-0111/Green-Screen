@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenScreen">
-        <activity android:name=".ScanBarcode" />
+        <activity android:name=".vehicles.Bus"></activity>
+        <activity android:name=".vehicles.Walk" />
+        <activity android:name=".vehicles.Cycle" />
+        <activity android:name=".vehicles.Plane" />
+        <activity android:name=".vehicles.Car" />
+        <activity android:name=".vehicles.Train" />
+        <activity android:name=".Scan.ScanBarcode" />
         <activity android:name=".CaptureActivity" />
         <activity android:name=".PlanYourTravel" />
         <activity android:name=".MainActivityTravel" />
@@ -24,9 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pop"
-            android:theme="@style/Theme.GreenScreen.CustomTheme"
-            />
+        <activity
+            android:name=".Scan.Pop"
+            android:theme="@style/Theme.GreenScreen.CustomTheme" />
     </application>
 
 </manifest>

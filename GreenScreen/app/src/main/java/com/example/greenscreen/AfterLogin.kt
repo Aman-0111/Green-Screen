@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import android.widget.Toast.*
+import com.example.greenscreen.Scan.ScanBarcode
 import com.example.greenscreen.yourGreenscore.yourGreenscore
 import com.google.zxing.integration.android.IntentIntegrator
 

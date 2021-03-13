@@ -1,22 +1,16 @@
-package com.example.greenscreen;
+package com.example.greenscreen.Scan;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.greenscreen.yourGreenscore.yourGreenscore;
+
+import com.example.greenscreen.CaptureActivity;
+import com.example.greenscreen.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import java.util.HashMap;
-import kotlin.Metadata;
-import org.jetbrains.annotations.Nullable;
 
 
 public class ScanBarcode extends AppCompatActivity implements View.OnClickListener {
@@ -51,7 +45,7 @@ public class ScanBarcode extends AppCompatActivity implements View.OnClickListen
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                startActivity(new Intent(ScanBarcode.this,Pop.class));
+                startActivity(new Intent(ScanBarcode.this, Pop.class));
                 /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
                 builder.setTitle("scanning Result");
