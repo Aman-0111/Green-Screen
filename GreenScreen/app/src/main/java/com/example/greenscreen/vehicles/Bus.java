@@ -16,9 +16,6 @@ public class Bus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plane);
         TextView CO2 = (TextView) findViewById(R.id.text_view);
-<<<<<<< Updated upstream
-        CO2.setText("CO2 emissions: ");
-=======
         TextView TIME = (TextView) findViewById(R.id.text_view2);
         Bundle bus = getIntent().getExtras();
         double result = bus.getDouble("key");
@@ -26,6 +23,5 @@ public class Bus extends AppCompatActivity {
         double time = result/20.9215;
         CO2.setText("CO2 emissions: "+df.format(emission)+"g/km");
         TIME.setText("Time Taken: " + df.format(time) + "hours");
->>>>>>> Stashed changes
     }
 }
